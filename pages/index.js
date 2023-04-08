@@ -57,7 +57,7 @@ export default function Home() {
           Evaluate the big O runtime complexity of your <u>for</u> loops
           <br/>
           <br className={styles.mobileBreak}/>
-          Get started by editing or pasting any <code className={styles.code}>code block</code> below in any language
+          Get started by editing or pasting a <code className={styles.code}>code block</code> below in any language
         </p>
 
         <div className={styles.inputContainer}>
