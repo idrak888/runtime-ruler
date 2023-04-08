@@ -42,18 +42,19 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .title,
 .description {
-  text-align: center;
+  text-align: left;
 }
 
 .description {
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+  max-width: 700px;
 }
 
 .code {
@@ -108,10 +109,112 @@
   margin-left: 0.5rem;
 }
 
+.inputContainer {
+  width: 100%;
+  max-width: 800px;
+  padding: 0.5rem 3rem;
+}
+
+.dropdown {
+  background-color: #0070f3;
+  padding: 10px;
+  font-size: 20px;
+  color: rgb(235, 235, 235);
+  border: 2px solid #0070f3;
+  cursor: pointer;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.dropdownMenu {
+  background-color: rgb(25, 97, 180);
+  padding: 10px;
+  font-size: 20px;
+  color: rgb(235, 235, 235);
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.button {
+  font-size: 18px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 20px;
+  margin-top: 15px;
+  background-color: none;
+  position: relative;
+  display: inline-block;
+  background-image: linear-gradient(#0070f3,rgb(41, 91, 255));
+  -webkit-box-shadow: 0px 5px 0px 0px #004491;
+  -moz-box-shadow: 0px 5px 0px 0px  #004491;
+  box-shadow: 0px 5px 0px 0px  #004491;
+  cursor: pointer;
+}
+
+.results {
+  max-width: 800px;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 3rem;
+}
+
+.mobileBreak {
+  display: none;
+}
+
+.textarea {
+  font-family: Menlo, Monaco, monospace;
+  font-size: 24px;
+  width: 100%;
+  min-height: 250px;
+  height: auto;
+  overflow: scroll;
+  outline-color: black;
+  border-color: #0070f3;
+  border-style: solid;
+  border-width: 2px;
+  background-color: #05122D;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    padding: 0 1rem;;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 18px;
+  }
+  .code {
+    line-height: 50px;
+  }
+  .title,
+  .description {
+    text-align: left;
+  }
+  .mobileBreak {
+    display: block;
+  }
+  .inputContainer, .results {
+    padding: 0;
+  }
+  .textarea {
+    font-size: 16px;
+  }
+  .card h2 {
+    font-size: 18px;
+  }
+  .card p {
+    font-size: 16px;
   }
 }
 
