@@ -191,7 +191,7 @@ function evaluateForStatement(forLine) {
             rangeStop = rangeStopSplit[rangeStopSplit.length - 1];
             break;
         }
-    }
+    }  
 
     // read operation
     var operationDone;
@@ -247,7 +247,7 @@ function evaluateForStatement(forLine) {
                     }
                 }
 
-                if(op === "*=" || op === "/=") {
+                if(op === "*=") {
                     // ensure right side is numeric and > 1
                     // ensure right side is numeric and > 0
                     let operationSplit = operation.split(op);
@@ -281,6 +281,10 @@ function evaluateForStatement(forLine) {
         }
         operationDone = "err";
     }
+
+    if (!isNaN(rangeStop)) {
+        operationDone = "const";
+    } 
 
     return {
         "eval": operationDone,
