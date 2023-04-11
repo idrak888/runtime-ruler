@@ -1,14 +1,15 @@
 import React from 'react';
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import animated from '../styles/Animated.module.css'
 import Editor from '../components/Editor';
 import { getBigONotation, getForStatements } from '../functions/bigOCalc';
+import AnimatedText from '../components/AnimatedText';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const [bigO, setBigO] = React.useState(null);
   const [code, setCode] = React.useState(
-    `int a=0;\nfor (int i=0;i<N;i++) {\n  for (int z=0;z<N;z++) {\n     a++;\n  }\n}\nSystem.out.println(a);`
+    `int a=0;\nfor (int i=0;i<N;i++) {\n  for (int z=0;z<N;z++) {\n     a++;\n  }\n} \nfor (int i=0;i<20;i++) {\n   a+=2; \n} \nSystem.out.println(a);`
   )
 
   function parseInput(code) {
@@ -36,20 +37,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to 
           <a href="#">
-            <div className={animated.waviy}>
-              <span style={{"--i":1}}>R</span>
-              <span style={{"--i":2}}>u</span>
-              <span style={{"--i":3}}>n</span>
-              <span style={{"--i":4}}>t</span>
-              <span style={{"--i":5}}>i</span>
-              <span style={{"--i":6}}>m</span>
-              <span style={{"--i":7}}>e</span>
-              <span style={{"--i":8}}>R</span>
-              <span style={{"--i":9}}>u</span>
-              <span style={{"--i":10}}>l</span>
-              <span style={{"--i":11}}>e</span>
-              <span style={{"--i":12}}>r</span>
-            </div>
+            <AnimatedText/>
           </a>
         </h1>
 
@@ -108,15 +96,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://github.com/idrak888"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Made by Idrak 
-        </a>
-      </footer>
+      <Footer/>
     </div>
   )
 }
